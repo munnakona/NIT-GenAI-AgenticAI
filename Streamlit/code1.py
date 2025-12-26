@@ -48,3 +48,5 @@ if st.button("Say hello"):
     st.write("Hello there!")
 else:
     st.write("Goodbye")
+# --- Footer ---
+st.write("Thank you for visiting this app!")    
