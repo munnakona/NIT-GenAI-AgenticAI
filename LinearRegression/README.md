@@ -5,6 +5,8 @@ This project demonstrates a simple linear regression model to predict salaries b
 ## Files
 
 - `simple_linear_regression.py`: Python script that implements the linear regression model.
+- `app.py`: Streamlit web application for interactive salary prediction based on years of experience.
+- `Linear_regression_model.pkl`: Pickled trained linear regression model.
 - `Salary_Data.csv`: Dataset containing salary and experience data.
 
 ## Requirements
@@ -14,13 +16,14 @@ This project demonstrates a simple linear regression model to predict salaries b
 - Pandas
 - Matplotlib
 - Scikit-learn
+- Streamlit
 
 ## Installation
 
 Install the required packages using pip:
 
 ```
-pip install numpy pandas matplotlib scikit-learn
+pip install numpy pandas matplotlib scikit-learn streamlit
 ```
 
 ## Usage
@@ -39,6 +42,14 @@ The script will:
 - Display a comparison of actual vs predicted values
 - Plot the regression line
 - Print the slope, intercept, and predicted salaries for 15 and 20 years of experience
+
+To run the interactive web application:
+
+```
+streamlit run app.py
+```
+
+The app will open in your browser, allowing you to input years of experience and get salary predictions in real-time.
 
 ## Output
 
