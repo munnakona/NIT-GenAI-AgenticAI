@@ -61,15 +61,62 @@ emp_20 = m_slope* 20 +  C_intercept
 
 print(emp_20)
 
+# Bias
+bias = regressor.score(x_train,y_train)
+
+print(bias)
 
 
+# Varience
+
+variance = regressor.score(x_test, y_test)
+print(variance)
+
+from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
+
+# Predictions
+y_train_pred = regressor.predict(x_train)
+y_test_pred = regressor.predict(x_test)
+
+# R2 Scores
+train_r2 = r2_score(y_train, y_train_pred)
+test_r2 = r2_score(y_test, y_test_pred)
+
+# MSE
+train_mse = mean_squared_error(y_train, y_train_pred)
+test_mse = mean_squared_error(y_test, y_test_pred)
+
+# RMSE
+train_rmse = np.sqrt(train_mse)
+test_rmse = np.sqrt(test_mse)
+
+# MAE
+train_mae = mean_absolute_error(y_train, y_train_pred)
+test_mae = mean_absolute_error(y_test, y_test_pred)
+
+# Output
+print(f"Training R² Score: {train_r2:.2f}")
+print(f"Testing R² Score: {test_r2:.2f}")
+print(f"Training MSE: {train_mse:.2f}")
+print(f"Testing MSE: {test_mse:.2f}")
+print(f"Training RMSE: {train_rmse:.2f}")
+print(f"Testing RMSE: {test_rmse:.2f}")
+print(f"Training MAE: {train_mae:.2f}")
+print(f"Testing MAE: {test_mae:.2f}")
 
 
+# Save the Tained Mode
+import pickle
 
+filename = 'Linear_regression_model.pkl'
 
+with open(filename,'wb')as file:
+    pickle.dump(regressor, file)
 
+print("Model has been pickled and savd as Linear_regression_model")
 
-
+import os
+print(os.getcwd())
 
 
 
