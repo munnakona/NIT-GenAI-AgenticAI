@@ -1,1 +1,75 @@
-import numpy as npimport pandas as pdimport matplotlib.pyplot as pltfrom sklearn.metrics import mean_squared_error, mean_absolute_error, r2_scoreimport pickleimport os dataset = pd.read_csv(r"/Users/munna/VScode/NareshIT/Multiple_Linear_Regression_Model/Investment.csv")x = dataset.iloc[:,:-1]y = dataset.iloc[:,4]x = pd.get_dummies(x,dtype=int)#Splitting the data into Train and Testfrom sklearn.model_selection import train_test_splitxtrain, xtest, ytrain, ytest = train_test_split(x,y,test_size=1/3, random_state=0)#Fitting simple linear regression to the Training Setfrom sklearn.linear_model import LinearRegression regressor = LinearRegression()regressor.fit(xtrain, ytrain)#Predicting the pricespred = regressor.predict(xtest)m = regressor.coef_print(m)c = regressor.intercept_print(c)x = np.append(arr=np.full((50,1),42467).astype(int),values=x,axis=1)import statsmodels.api as smx_opt = x[:,[0,1,2,3,4,5]]regressor.OLS = sm.OLS(endog=y,exog=x_opt).fit()regressor.OLS.summary()import statsmodels.api as smx_opt = x[:,[0,1,2,3,5]]regressor.OLS = sm.OLS(endog=y,exog=x_opt).fit()regressor.OLS.summary()bias = regressor.score(xtrain, ytrain)biasvariance = regressor.score(xtest,ytest)variance
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
+import pickle
+import os 
+
+dataset = pd.read_csv(r"/Users/munna/VScode/NareshIT/Multiple_Linear_Regression_Model/Investment.csv")
+
+
+x = dataset.iloc[:,:-1]
+
+y = dataset.iloc[:,4]
+
+x = pd.get_dummies(x,dtype=int)
+
+
+
+#Splitting the data into Train and Test
+from sklearn.model_selection import train_test_split
+
+xtrain, xtest, ytrain, ytest = train_test_split(x,y,test_size=1/3, random_state=0)
+
+#Fitting simple linear regression to the Training Set
+from sklearn.linear_model import LinearRegression 
+regressor = LinearRegression()
+regressor.fit(xtrain, ytrain)
+
+
+#Predicting the prices
+pred = regressor.predict(xtest)
+
+m = regressor.coef_
+print(m)
+
+c = regressor.intercept_
+print(c)
+
+
+x = np.append(arr=np.full((50,1),42467).astype(int),values=x,axis=1)
+
+import statsmodels.api as sm
+
+x_opt = x[:,[0,1,2,3,4,5]]
+
+regressor.OLS = sm.OLS(endog=y,exog=x_opt).fit()
+regressor.OLS.summary()
+
+import statsmodels.api as sm
+
+x_opt = x[:,[0,1,2,3,5]]
+
+regressor.OLS = sm.OLS(endog=y,exog=x_opt).fit()
+regressor.OLS.summary()
+
+bias = regressor.score(xtrain, ytrain)
+bias
+
+variance = regressor.score(xtest,ytest)
+variance
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
