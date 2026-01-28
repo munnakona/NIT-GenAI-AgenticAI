@@ -84,6 +84,62 @@ svr_model_pred = svr_reg.predict([[6.5]])
 svr_model_pred
 
 
+# KNN Model
+
+from sklearn.neighbors import KNeighborsRegressor
+
+
+knn_reg = KNeighborsRegressor(n_neighbors=4)
+knn_reg.fit(X, y)
+
+knn_model_pred = knn_reg.predict([[6.5]])
+knn_model_pred
+
+
+# DTR Model
+
+from sklearn.tree import DecisionTreeRegressor
+
+
+dt_reg = DecisionTreeRegressor()
+dt_reg.fit(X, y)
+
+
+dt_model_pred = dt_reg.predict([[6.5]])
+dt_model_pred
+
+
+
+
+
+# RFR  Model
+
+from sklearn.ensemble import RandomForestRegressor
+
+
+rfr_reg = RandomForestRegressor()
+rfr_reg.fit(X, y)
+
+
+rfr_model_pred = rfr_reg.predict([[6.5]])
+rfr_model_pred
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
